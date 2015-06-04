@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+
+        <title>DK Xifara for DECODED</title>
+
+        <meta name="description" content="{{content}}">
+        <meta name="author" content="{{author}}">
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <link href='http://fonts.googleapis.com/css?family=Cabin:500' rel='stylesheet' type='text/css'>
+        
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/reveal/reveal.min.css">
+        <link rel="stylesheet" href="css/font-face.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/d3.css">
+
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="css/reveal/code/zenburn.css">
+
+        <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+        <script>
+            document.write( '<link rel="stylesheet" href="css/reveal/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="js/reveal/lib/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <header class="bottom-drop-shadow"></header>
+
+        <div class="reveal">
+
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+
+                <!-- Slide #1 -->
+                <section class="vert-center">
+                    <h1 class="title center">Big Data</h1>
+                    <!-- <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> -->
+                    <!--<h2>Exploring the myth</h2> -->
+                    <h2> Problems and Pipelines</h2>
+                    <img src="chrom9_1000g.png">
+                    <br>
+                    <!-- would have like this to be the background (perhaps a little transparent), but of course I have no idea how to do that :)-->
+
+                    <aside class="notes">
+                        I will at least *try* to be a little provocative and claim that the allure of Big Data is a fetish of the times, that the fear of and intimidation by Big Data is a byproduct of misinformation and really try to convince you that:
+                        -big data is not a thing - one can talk as specifically about big data as about making dinner
+                        -big data is not new - it's been around since (or even before) the beginning of the digital age
+                        (e.g. aviation industry - data sets have been growing ever since they were created)
+
+                         -And its hype is growing because there's just so much more of it now, in any field. 
+                                -But it's not that there's more of it - more people have access to it:
+                                -non-specialists have access to it
+
+                        would like to talk about things that I have discovered  through my experience
+                        -3 key problems (volume, velocity, variety) manifested over 3 key constraings (hardware, software, analysis)
+                        -otherwise it's the same!
+                        -and people have historically been after more data - except now we call it 'Big' and it's scary
+                                (although, granted, now we have access to data that we may have not been collecting actively or purposefully. In other words, studies are now often retrospective, which changes things *slightly* (conceptually AND statistically) - but as I said I'm being extra provocative here!)
+                    </aside>
+
+
+                </section>
+
+                
+
+                <!-- Slide #2 -->
+                <section>
+
+                    <!-- Vertical Slide #1 -->
+                    <section>
+
+                        <h1> Storage</h1>
+                        <p>
+                            <ol>
+                                <li>Where?</li>
+                                <li>  </li>
+                                <li>  </li>
+                            </ol>
+                        </p>
+
+                        <img src = "a_computer.png">
+
+                        <aside class="notes">
+                            <p>
+                                {{notes}}
+                                -When we talk about big data typically we are referring data that is either high-dimensional and/or >>GB in size when zipped(!)
+
+                                -need both space and hardware that will support input/output - multiple users accessing data, transferring it around and writing out data, simultaneously.
+                                (this is a real problem - bring up WTCHG)
+
+                                Where do you store it?
+                                -who will need to access it? obviously we can't know this definitely but it's a legitimate concern, especially as everything becomes more and more interdisciplinary. 
+                                -people access to the same server? or should it be online? Is it even downloadable? Need an ftp service? How long would it take to transfer files?
+                                -security? Could you solve your storage problem on the cloud?
+                                ... native american example
+                                
+                                -Looking ahead, this is a solvable problem.
+
+                            </p>
+                        </aside>
+                    </section>
+
+                    <!-- Vertical Slide #1b-->
+                    <section>
+                        <h1>Hardware</h1>
+                        <p>
+                            <ol>
+                                <li>Where?</li>
+                                <li>  </li>
+                                <li>  </li>
+                            </ol>
+                        </p>
+
+                        <img src = "a_big_computer.png">
+
+                    </section>
+
+                    <!-- Vertical Slide #1c-->
+                    <section>
+                        <h1>Hardware</h1>
+                        <p>
+                            <ol>
+                                <li>Where?</li>
+                                <li>  </li>
+                                <li>  </li>
+                            </ol>
+                        </p>
+
+                        <img src = "many_computers.png">
+
+                    </section>
+
+                    
+                    <!-- Vertical Slide #2 -->
+                    <section>
+                        <h1>Storage</h1>
+                        <h2>Hardware</h2>
+                        <p>
+                            <ol>
+                                <li>Where?</li>
+                                <li>How?</li>
+                                <li> </li>
+                            </ol>
+                        </p>
+
+                         <img src = "a_network.png">
+
+                        <aside class="notes">
+                            <p>
+                                -NEED INFRASTRUCTURE
+                                -how do you store it? All in one blob? 
+                                -relational or non-relational: many files, many directories?
+                                -how many people will need to access at any one time?
+                                -will they need to access all of it or should it very be straightforward to pull out sub-chunks?
+                                - leq 2K files/directory
+                                -format? Json - great for web design but would be a really bad idea for genomic data for instance: in my current project I use genomic data for 5000 individuals at 1M DNA positions.
+                                Not only do I know what their DNA is, but how confidently it was obtained in the lab (so for each person I have 1M of these scores too), I have a bunch of measurements for specific genes that I am interested, their gender, whether they smoke, their age and dietery habits. 
+                                Storing this in json format - I have not calculated but would argue with conviction - is impossible.)
+                                -again, who will need to use it? What software do they use? What analysis will they perform?
+                                -csv vs vcf vs plain text vs json
+
+                                -should always be such that it allows for parallelisation of jobs on cluster
+
+                                -of course it's not just accessing and managing but writing out afterwards as well...
+
+                                -this is a solvable problem.
+
+                            </p>
+                        </aside>
+                    </section>
+
+                    <section>
+
+                        <h1>Storage</h1>
+                        <h2>Hardware</h2>
+                        <p>
+                            <ol>
+                                <li>Where?</li>
+                                <li>How?</li>
+                                <li>Who?</li>
+                            </ol>
+                        </p>
+
+                        <img src = "network_users.png">
+
+                    </section>
+
+                </section>
+
+                <!-- Slide #4-->
+                <section>
+
+                    <!-- Vertical Slide #1-->
+                    <section>
+                        <h1>Storage</h1>
+                        <h2>Software</h2>
+
+                        <img src="analyse_tweets.png">
+                        <!--
+                        <br>
+                        <h3> Natural Language Processing </h3>
+                        <br>
+                        <h3>
+                        <ul>
+                            <li> python <h5> (view and manage tweets) </h5> </li> <br>
+                            <li> c++ <h5> (sophisticated statistical analysis)</li> <br>    
+                            <li> R/matlabe  <h5> (results?) </li> <br>
+                            <li> html, css, javascript <h5> (online results?) </li> <br>
+                        </ul>
+                        <br>
+                        <ul>
+                            <li>Parallelisation and clusters?</li>
+                        </ul>
+                        <h3> -->
+                        <aside class="notes">
+                            this is not just a big data issue
+                            1. which software?
+                            1b. Need to consider which analyses we will carry out - to decide on choice of software
+                            (millions of tweets - some NLP)
+                            (python: handling the data - good for dealing with text)
+                            (python: basic NLP)
+                            (c++: NLP using more stophisticated stat tools (e.g. HMM, a bayesian approach?) )
+                            (R or matlab  to summarise results)
+                            (and then/or perhaps html, css, javascript to read those into a browser)
+                            2. ulitmately it comes down to: speed vs memory vs and who the user is
+
+                            All this while:
+                            2b. Construct a pipeline - this of the order/sequence of jobs
+                            3. and whether you're working with other people (this is not a big data problem only)
+                            4. and whether it's on a cluster
+
+                            -schematic of a pipeline - what are the different pieces of software, how do they work together
+                            all the various bits of software that are involved
+                            -don't mention a pipeline
+
+                        </aside>
+                    </section>
+
+                    <!-- Vertical Slide #2 -->
+                    <section>
+
+                        <h1>Software</h1>
+                        <h2>Who's happy?</h2>
+
+                         <img src="analyse_tweets_software.png">
+
+                    </section>
+
+                </section>
+
+                <!-- Slide #5 -->
+                <section>
+
+                    <!-- Vertical Slide #1 -->
+                    <section>
+                        <h1> Analysis & Visualisation</h1>
+                        <br><br>
+                        <img src = "small_data_tweets.png">
+                        
+                        <aside class="notes">
+                            <p>
+                                Insert diagram of with a few data points (xaxis - time of day, number of tweets)
+                                -when data is "Small" - we can immediately visualise it
+                            </p>
+                        </aside>
+                    </section>
+
+                    <!-- Vertical Slide #2 -->
+                    <section>
+                    <h1> Analysis & Visualisation</h1>
+
+                    <img src = "big_data_tweets_black.png">
+
+                    <aside class="notes">
+                            <p>
+                                Insert diagram of with a many data points (xaxis - time of day, number of tweets)
+                                -is the pattern gone?
+                                -either volume, velocity, variety obstructs you to see what's going on
+                                
+                            </p>
+                        </aside>
+
+                    </section>
+
+                    <!-- Vertical Slide #3 -->
+                    <section>
+                    <h1> Analysis & Visualisation</h1>
+                    <br><br><br>
+                    <img src = "big_data_tweets_colour.png">
+
+                    <aside class="notes">
+                            <p>
+                                Insert diagram of with a many data points (xaxis - time of day, number of tweets)
+                                indexed by colour
+                                -what's in it?
+                                -how else do we know how to analyse?
+                                -a) need to realise that we have data from many countries
+                                -b) this plot is poor - we'd need a time series - data is on different time zones!
+                                -c) finding associations and patterns is key to having that insight
+                                -
+                            </p>
+                        </aside>
+
+                    </section>
+             
+                </section>
+
+
+                <!-- Slide #6 -->
+                <section>
+                    <h1>Pipelines</h1>
+                    <br><br>
+                    <h2>Volume, Velocity, Variety </h2>
+
+                    <p>It is a 2-gear problem:</p>
+                    <ol>
+                        <li> Exhaustive, rigorous back-end </li><br><br>
+                        <li> Meaningful and effective visualisation </li><br><br>
+                    </ol>
+
+                    <p> No single golden rule approach </p>
+
+                    <ol>
+                        <li>Hardware</li> 
+                        <li>Early visualisation</li> 
+                        <li>Analysis (planning)</li> 
+                        <li>Software</li>
+                        <li>Analysis (execution; clusters?) </li>
+                        <li>Visualisation</li>
+                    </ol>
+                    <br><br><br>
+                    <h3> Speed vs Memory </h3>
+
+                    <aside class="notes">
+                        --worry about hardware
+                        -early vis to decide on analysis
+                        -software and cluster worries and storage of results
+                        -results and vis
+                    </aside>
+                </section>
+
+                <!-- Slide #8 -->
+                <section>
+                    <section>
+                        <h1>An example from Stat. Genetics</h1>
+                        <h2>Multiple Sclerosis</h2>
+                        <br>
+                        <h3>International project (1 US team, 2 UK teams) </h3><br>
+                        <p>Collected BIG DATA for 45,000 people from around the world (~1Tb) </p>
+
+                        <img src = "ichip_map.png">
+                        <!--
+                        <p>Tables are used for holding data</p>
+                        <table class='table'>
+                            <tr>
+                                <td>Individual</td>
+                                <td>Gender</td>
+                                <td>Age</td>
+                                <td>MS</td>
+                            </tr>
+                            <tr>
+                                <td>Person 1</td>
+                                <td>Female</td>
+                                <td>23</td>
+                                <td>No</td>
+                            </tr>
+                        </table>
+                        <img src = "MS_data.png">
+                        <img src = "MS_age.png">
+                        -->
+
+
+                    </section>
+
+                    <section>
+                        <h1>An example from Stat. Genetics</h1>
+                        <h2>Multiple Sclerosis</h2>
+                        <img src = "chrom9_1000g.png">
+                    </section>
+
+                    <section>
+                        <h1>An example from Stat. Genetics</h1>
+                        <h2>Multiple Sclerosis</h2>
+                        <img src = "CCEuropeUNLINKED68K.png">
+                    </section>
+
+                    <section>
+                        <h1>An example from Stat. Genetics</h1>
+                        <h2>Multiple Sclerosis</h2>
+                        <img src = "manhattan.png">
+                    </section>
+
+                </section>
+
+                <!-- Slide #8 -->
+                <section>
+                    <h1>The Enemy of 'Big' is 'Bigger'</h1>
+                    <br><br>
+                    <img src = "size_and_scaling_large.png">
+
+                    <aside class="notes">
+                        -scaling
+                        -pushing boundaries and strengths
+                        -human, elephant, dinosaur
+                        -That's all great, but we still worry about RAM...
+                        -and nothing tells us our analysis is scalable. What if my big data becomes bigger?
+                        -not all computational processes are parallelisable and scaling is a real problem.
+
+                    </aside>
+                </section>
+
+            </div>
+
+        </div>
+
+        <footer class="top-drop-shadow"></footer>
+
+        <script src="js/reveal/lib/head.min.js"></script>
+        <script src="js/reveal/reveal.min.js"></script>
+
+        <script src="js/d3/d3.v3.js"></script>
+        <script src="js/script.js"></script>
+
+        <script>
+
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: false,
+
+                theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+                transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: 'js/reveal/lib/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'js/reveal/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'js/reveal/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'js/reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'js/reveal/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'js/reveal/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                    // { src: 'js/reveal/plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+                    // { src: 'js/reveal/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+                ]
+            });
+
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,252 @@
+?matrix
+as.character(c(1,2,3))
+a = c(1=1, 2=2)
+?load
+?ceiling
+ceiling(0.1, 0.2, 0.9, 2.1)
+ceiling(c(0.1, 0.2, 0.9, 2.1))
+floor(c(0.1, 0.2, 0.9, 2.1))
+?strsplit
+?grep
+grep('Chr1', c(1,2,3,4,5))
+grep('Chr1', as.character(c(1,2,3,4,5)))
+substr('Chr1', 4, 4)
+strsplit('Chr1_1234', -_)
+strsplit('Chr1_1234', '_')
+m = matrix(0, nrow = 5, ncol = 5)
+m
+lapply(1:5, function(x){})
+lapply(1:5, function(x){
+m[x,] = rnorm(5)})
+m
+m = lapply(1:5, function(x,m){
+m[x,] = rnorm(5)})
+m = lapply(1:5, function(x,m){
+m[x,] = rnorm(5)}, m = m)
+m
+library(plyr)
+aaply(m, 1, function(x){
+rnorm(5)}
+)
+m
+m = matrix(0, nrow = 5, ncol = 5, dimnames(list(c('b','a','c','d','e'))))
+m = matrix(0, nrow = 5, ncol = 5, dimnames(list(c('b','a','c','d','e'), c(1,2,3,4,5))))
+m = matrix(0, nrow = 5, ncol = 5, dimnames = list(c('b','a','d','c','e')))
+m
+d = c('a','b','c','d','e')
+which(d == 'a')
+which(d == 'b')
+aaply(m, 1, function(x){}
+aaply(m, 1, function(x){
+x = rep(which(d == names(x)), 5)
+})
+m
+aaply(m, 1, function(x){
+rep(which(d == names(x)),5)})
+?melt
+library(reshape)
+?melt
+melt(m)
+melt(m, measure.vars = colnames(m))
+?strsplit
+melt(m, measure.vars = c(colnames(m), rownames(m)))
+m
+melt(m)
+?melt.data.frame
+head(melt(tips))
+melt.data.frame(m)
+melt.data.frame(as.data.frame(m))
+?image
+m
+m = matrix(rnorm(25), nrow = 5, ncol = 5)
+m
+max(m)
+heat.colors[12]
+heat.colors(12)
+inv(heat.colors(12))
+rev(heat.colors(12))
+?abline
+?jpeg
+x1 = rnorm(10000)
+x2 = rnorm(10000, mean = 5, sd = 2)
+y = x1 + x2
+mean(y)
+sd(y)
+x1 = rnorm(10000, mean = 10, sd = 4)
+y = x1 + x2
+mean(y)
+sd(y)
+sqrt(6)
+var(y)
+var(x)
+var(x1)
+var(x2)
+?load
+princomp(as.matrix(c(0,0,0,0,50,27,43,1,2,5,66,0,0,0), ncol = 1))
+?order
+476/19
+?grep
+a = c(a = 1, b = 2, c=3)
+names(a>=2)
+names(a[a>=2])
+?fdr
+logp = c(1,1,2,1,5,16,3)
+10^(-logp)
+-logp(10^(-logp))
+-log(10^(-logp))
+-log10(10^(-logp))
+?read.delim
+?merge
+er = data.frame(a = c(1,2,3,4,5), b = c('a','s','d','f','g'))
+er
+rownames(er) = c('a1', 'a2','a4','a5','a6')
+er
+im = data.frame(a = c(4,7), b = c('q','w'))
+rownames(im) = c('a3','a4')
+im
+merge(er, im)
+?merge
+merge(er, im, all = T)
+merge(er, im, all = T, by=row.names)
+merge(er, im, all = T, by.x = names(er), by.y=names(im))
+merge(er, im, all = T, by.x = rownames(er), by.y=rownames(im))
+merge(t(er), t(im), all = T)
+li = data.frame(a = c(3,6,9), b = c('z','x','c'))
+rownames(li) = c('a1', 'a2','a3')
+Reduce(function(x,y){merge(x, y, by = c('row.names'))}, list(er, im, li))
+Reduce(function(x,y){merge(x, y, all = T)}, list(er, im, li))
+Reduce(function(x,y){merge(x, y, all = T)}, list(t(er), t(im), t(li)))
+library(plyr)
+Reduce(function(x,y){join(x, y, type = 'full')}, list(t(er), t(im), t(li)))
+str(t(er))
+Reduce(function(x,y){join(x, y, type = 'full')}, list(as.data.frame(t(er)), as.data.frame(t(im)), as.data.frame(t(li))))
+t(er)
+li = data.frame(li.a = c(3,6,9), li.b = c('z','x','c'))
+im = data.frame(im.a = c(4,7), im.b = c('q','w'))
+er = data.frame(er.a = c(1,2,3,4,5), er.b = c('a','s','d','f','g'))
+Reduce(function(x,y){join(x, y, type = 'full')}, list(as.data.frame(t(er)), as.data.frame(t(im)), as.data.frame(t(li))))
+rownames(li) = c('a1', 'a2','a3')
+rownames(im) = c('a3','a4')
+rownames(er) = c('a1', 'a2','a4','a5','a6')
+Reduce(function(x,y){join(x, y, type = 'full')}, list(as.data.frame(t(er)), as.data.frame(t(im)), as.data.frame(t(li))))
+as.data.frame(t(er))
+er
+apply(er, 2, function(x){names(x)}})
+apply(er, 2, function(x){names(x)})
+apply(er, 1, function(x){names(x)})
+apply(er, 2, function(x){names(x)})
+?gev.fit
+library(ismec)
+library(ismev)
+install.packages('ismev')
+library(ismev)
+?gev
+??gev
+data(portpirie)#
+gev.fit(portpirie[,2])
+str(portpirie)
+data(portpirie)#
+gf = gev.fit(portpirie[,2])
+gev.diag(gf)
+?gev.diag
+gev.diag(gf)
+title(main = 'martha')
+gev.diag(gf)
+unlist(er)
+as.vector(er)
+?write.table
+?inprod
+combn(c(1,2,3,4))
+?comb
+?combn
+combn(c(1,2,3,4), 2)
+a = c(1,2,3,1,2,3,3,2,1)
+f = factor(a)
+f
+a = c('martha', 'ma', 'ma', 'mar','martha', 'mart')
+f = factor(a)
+f
+levels(f)
+a = c('123', '1', '12', '123','2', '1')
+f = factor(a)
+f
+plot(histogram(f))
+plot(hist(f))
+plot(hist(as.numeric(f)))
+as.numeric(f)
+as.numeric(levels(f))
+as.numeric(levels(f))[f]
+?load
+10e-6
+library(pdftk)
+install.packages('pdftk')
+library(pdftk)
+install.packages('pdftk')
+?abline
+a = 1
+if (a == TRUE){ b = 5}
+b
+b = 8
+if (a == TRUE){ b = 5}
+b
+source('/Volumes/martha/DPhil/Recombination/Code/R/segments.colour.horz.R')
+segment.plot
+segment.plot(file = '/Volumes/data/scratch/martha/19founders.variants/GATKcalls/mosaic10.allsnps.txt', pdffile = '/Volumes/martha/DPhil/Recombination/Results2/Mosaics/MaskedTransposons/segments10.allsnps.gatk.pdf')
+source('/Volumes/martha/DPhil/Recombination/Code/R/segments.colour.R')
+source('/Volumes/martha/DPhil/Recombination/Code/R/segments.colour.horz.R')
+segment.plot(file = '/Volumes/data/scratch/martha/19founders.variants/GATKcalls/mosaic10.allsnps.txt', pdffile = '/Volumes/martha/DPhil/Recombination/Results2/Mosaics/MaskedTransposons/segments10.allsnps.gatk.pdf')
+source('/Volumes/martha/DPhil/Recombination/Code/R/segments.colour.horz.R')
+segment.plot(file = '/Volumes/data/scratch/martha/19founders.variants/GATKcalls/mosaic10.allsnps.txt', pdffile = '/Volumes/martha/DPhil/Recombination/Results2/Mosaics/MaskedTransposons/segments10.allsnps.gatk.pdf')
+source('/Volumes/martha/DPhil/Recombination/Results2/AncestralLines/plot.diploid-new.R')
+segment.plot('/Volumes/data-2/scratch/martha/19founders.variants/GATKcalls/mosaic10.gatk.highcov.diploid.txt', '/Volumes/data-2/scratch/martha/19founders.variants/GATKcalls/mosaic10.gatk.highcov.txt', '/Volumes/data-2/scratch/martha/19founders.variants/GATKcalls/mosaic.hap.dip.high.pdf', 'MAGIC')
+?read.delim
+segment.plot('/Volumes/data-2/scratch/martha/19founders.variants/GATKcalls/mosaic10.gatk.highcov.diploid.txt', '/Volumes/data-2/scratch/martha/19founders.variants/GATKcalls/mosaic10.gatk.highcov.txt', '/Volumes/data-2/scratch/martha/19founders.variants/GATKcalls/mosaic.hap.dip.high.pdf', 'MAGIC')
+source('/Volumes/martha/DPhil/Recombination/Results2/AncestralLines/plot.diploid.R')
+segment.plot('/Volumes/data-2/scratch/martha/19founders.variants/GATKcalls/mosaic10.gatk.highcov.diploid.txt', '/Volumes/data-2/scratch/martha/19founders.variants/GATKcalls/mosaic.dip.high.pdf')
+source('/Volumes/martha/DPhil/Recombination/Results2/AncestralLines/plot.diploid.R')
+segment.plot('/Volumes/data-2/scratch/martha/19founders.variants/GATKcalls/mosaic10.gatk.highcov.diploid.txt', '/Volumes/data-2/scratch/martha/19founders.variants/GATKcalls/mosaic.dip.high.pdf')
+source('/Volumes/martha/DPhil/Recombination/Results2/AncestralLines/plot.diploid.R')
+segment.plot('/Volumes/data-2/scratch/martha/19founders.variants/GATKcalls/mosaic10.gatk.highcov.diploid.txt', '/Volumes/data-2/scratch/martha/19founders.variants/GATKcalls/mosaic.dip.high.pdf')
+source('/Volumes/martha/DPhil/Recombination/Results2/AncestralLines/plot.diploid.R')
+segment.plot('/Volumes/data-2/scratch/martha/19founders.variants/GATKcalls/mosaic10.gatk.highcov.diploid.txt', '/Volumes/data-2/scratch/martha/19founders.variants/GATKcalls/mosaic.dip.high.pdf')
+source('/Volumes/martha/DPhil/Recombination/Code/R/segments.horz.diploid.R')
+segment.plot('/Volumes/data-1/scratch/martha/19founders.variants/GATKcalls/mosaic10.gatk.highcov.diploid.txt', '/Volumes/data-1/scratch/martha/19founders.variants/GATKcalls/mosaic10.gatk.highcov.diploid.pdf', '')
+source('/Volumes/martha/DPhil/Recombination/Code/R/segments.horz.diploid.R')
+segment.plot('/Volumes/data-1/scratch/martha/19founders.variants/GATKcalls/mosaic10.gatk.highcov.diploid.txt', '/Volumes/data-1/scratch/martha/19founders.variants/GATKcalls/mosaic10.gatk.highcov.diploid.pdf', '')
+source('/Volumes/martha/DPhil/Recombination/Code/R/segments.horz.diploid.R')
+segment.plot('/Volumes/data-1/scratch/martha/19founders.variants/GATKcalls/mosaic10.gatk.highcov.diploid.txt', '/Volumes/data-1/scratch/martha/19founders.variants/GATKcalls/mosaic10.gatk.highcov.diploid.pdf', '')
+source('/Volumes/martha/DPhil/Recombination/Code/R/segments.horz.diploid.R')
+segment.plot('/Volumes/data-1/scratch/martha/19founders.variants/GATKcalls/mosaic10.gatk.highcov.diploid.txt', '/Volumes/data-1/scratch/martha/19founders.variants/GATKcalls/mosaic10.gatk.highcov.diploid.pdf', '')
+source('/Volumes/martha/DPhil/Recombination/Code/R/segments.horz.diploid.R')
+segment.plot('/Volumes/data-1/scratch/martha/19founders.variants/GATKcalls/mosaic10.gatk.highcov.diploid.txt', '/Volumes/data-1/scratch/martha/19founders.variants/GATKcalls/mosaic10.gatk.highcov.diploid.pdf', '')
+source('/Volumes/martha/DPhil/Recombination/Code/R/segments.horz.diploid.R')
+segment.plot('/Volumes/data-1/scratch/martha/19founders.variants/GATKcalls/mosaic10.gatk.highcov.diploid.txt', '/Volumes/data-1/scratch/martha/19founders.variants/GATKcalls/mosaic10.gatk.highcov.diploid.pdf', '')
+source('/Volumes/martha/DPhil/Recombination/Code/R/segments.horz.diploid.R')
+segment.plot('/Volumes/data-1/scratch/martha/19founders.variants/GATKcalls/mosaic10.gatk.highcov.diploid.txt', '/Volumes/data-1/scratch/martha/19founders.variants/GATKcalls/mosaic10.gatk.highcov.diploid.pdf', '')
+source('/Volumes/martha/DPhil/Recombination/Code/R/segments.horz.diploid.R')
+segment.plot('/Volumes/data-1/scratch/martha/19founders.variants/GATKcalls/mosaic10.gatk.highcov.diploid.txt', '/Volumes/data-1/scratch/martha/19founders.variants/GATKcalls/mosaic10.gatk.highcov.diploid.pdf', '')
+source('/Volumes/martha/DPhil/Recombination/Code/R/segments.horz.diploid.R')
+segment.plot('/Volumes/data-1/scratch/martha/19founders.variants/GATKcalls/mosaic10.gatk.highcov.diploid.txt', '/Volumes/data-1/scratch/martha/19founders.variants/GATKcalls/mosaic10.gatk.highcov.diploid.pdf', '')
+source('/Volumes/martha/DPhil/Recombination/Code/R/segments.horz.diploid.R')
+segment.plot('/Volumes/data-1/scratch/martha/19founders.variants/GATKcalls/mosaic10.gatk.highcov.diploid.txt', '/Volumes/data-1/scratch/martha/19founders.variants/GATKcalls/mosaic10.gatk.highcov.diploid.pdf', '')
+source('/Volumes/martha/DPhil/Recombination/Code/R/segments.horz.diploid.R')
+segment.plot('/Volumes/data-1/scratch/martha/19founders.variants/GATKcalls/mosaic10.gatk.highcov.diploid.txt', '/Volumes/data-1/scratch/martha/19founders.variants/GATKcalls/mosaic10.gatk.highcov.diploid.pdf', '')
+source('/Volumes/martha/DPhil/Recombination/Code/R/segments.horz.diploid.R')
+segment.plot('/Volumes/data-1/scratch/martha/19founders.variants/GATKcalls/mosaic10.gatk.highcov.diploid.txt', '/Volumes/data-1/scratch/martha/19founders.variants/GATKcalls/mosaic10.gatk.highcov.diploid.pdf', '')
+segment.plot('/Volumes/data-1/scratch/martha/19founders.variants/GATKcalls/mosaic10.gatk.highcov.diploid.txt', '/Volumes/data-1/scratch/martha/19founders.variants/GATKcalls/mosaic10.gatk.highcov.diploid.pdf')
+source('/Volumes/martha/DPhil/Recombination/Code/R/segments.horz.diploid.R')
+segment.plot('/Volumes/data-1/scratch/martha/19founders.variants/GATKcalls/mosaic10.gatk.highcov.diploid.txt', '/Volumes/data-1/scratch/martha/19founders.variants/GATKcalls/mosaic10.gatk.highcov.diploid.pdf')
+source('/Volumes/martha/DPhil/Recombination/Code/R/segments.horz.diploid.R')
+segment.plot('/Volumes/data-1/scratch/martha/19founders.variants/GATKcalls/mosaic10.gatk.highcov.diploid.txt', '/Volumes/data-1/scratch/martha/19founders.variants/GATKcalls/mosaic10.gatk.highcov.diploid.pdf')
+source('/Volumes/martha/DPhil/Recombination/Code/R/segments.horz.diploid.R')
+segment.plot('/Volumes/data-1/scratch/martha/19founders.variants/GATKcalls/mosaic10.gatk.lowcov.diploid.txt', '/Volumes/data-1/scratch/martha/19founders.variants/GATKcalls/mosaic10.gatk.lowcov.diploid.pdf')
+source('/Users/martha/Sites/Presentation/rscripts/rplots.R')
+?ggsave
+source('/Users/martha/Sites/Presentation/rscripts/rplots.R')
+source('/Users/martha/Sites/Presentation/rscripts/rplots.R')
+source('/Users/martha/Sites/Presentation/rscripts/rplots.R')
+source('/Users/martha/Sites/Presentation/rscripts/rplots.R')
+source('/Users/martha/Sites/Presentation/rscripts/rplots.R')
+setwd('/Users/martha/Sites/Presentation/rscripts/')
+source('/Users/martha/Sites/Presentation/rscripts/rplots.R')
+source('rplots.R')

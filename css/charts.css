@@ -1,0 +1,122 @@
+/**
+*
+*
+*
+*
+*
+*
+*
+*
+*/
+
+
+figure {
+	position: relative;
+	float: left;
+	width: 90%;
+	min-width: 400px;
+	margin-left: 5%;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	font-family: 'Cabin', sans-serif;
+	font-size: 14px;
+	font-weight: normal;
+	color: #474747;
+}
+
+.canvas {
+	font-family: 'Cabin', sans-serif;
+ 	font-size: 14px;
+ 	fill: #474747;
+ 	font-weight: normal;
+}
+
+.label {
+	font-size: 14px;
+}
+
+.axis path {
+	fill: none;
+}
+
+.y.axis path {
+	stroke: none;
+}
+
+.x.axis path {
+	stroke: #aaa;
+	stroke-width: 1px;
+}
+
+.axis line {
+	stroke: #aaa;
+	stroke-width: 1px;
+}
+
+.legend {
+	width: 400px;
+	height: 50px;
+	padding: 0 20px;
+	display: block;
+	position: relative;
+	margin: 0 auto;
+	top: -150px;
+	text-align: center;
+}
+
+.line {
+	display: none;
+}
+
+.circle {
+	fill-opacity: 0.4;
+}
+
+.chart1 .circle {
+	fill: steelblue;
+	fill-opacity: 1;
+}
+
+.chart .controls {
+	display: block;
+}
+
+
+.node {
+	float: left;
+	position: relative;
+}
+
+.shell {
+	fill: black;
+	fill-opacity: 1;
+	stroke: none;
+}
+
+.widget {
+	fill: white;
+	fill-opacity: 1;
+	stroke: none;
+}
+
+.separator {
+	fill: none;
+	stroke: white;
+	stroke-width: 5px;
+	stroke-linecap: butt;
+	stroke-linejoin: miter;
+	stroke-miterlimit: 4;
+	stroke-opacity: 1;
+	stroke-dasharray: none;
+}
+
+.hidden {
+	opacity: 0;
+}
+
+.button {
+	fill: white;
+	fill-opacity: 1;
+	stroke: none;
+}
+
